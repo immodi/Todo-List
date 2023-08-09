@@ -1,0 +1,367 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 95vh;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  
+}
+
+.app-title {
+  font-size: 4rem;
+  font-weight: bolder;
+  position: relative;
+  top: 0.5rem;
+  right: 1rem;
+  align-self: center;
+}
+
+.add-item-contianer {
+  display: flex !important;
+}
+
+.line {
+  width: 80vw;
+}
+
+.btn-dark {
+  position: relative;
+  left: 0.8rem;
+}
+
+.list-group {
+  /* overflow-y: auto;
+  overflow-x: auto; */
+  width: 80vw;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.edit-item {
+  overflow: hidden;
+  position: absolute;
+  left: 3rem;
+  animation: add-item-input-field-in 500ms 1 normal ease;
+}
+
+.list-group-item {
+  display: flex !important;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.item-text {
+  /* max-block-size: 2rem; */
+  width: 70%;
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute !important;
+  left: 3rem !important;
+}
+
+
+.scrollbar::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #000000;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  position: absolute;
+  right: -3rem;
+  top: 0.6rem;
+  box-shadow: inset 0px 0px 0px #000000;
+  animation: fill .5s ease-in-out .5s forwards, scale .6s ease-in-out 1s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: none;
+  }
+  
+  25% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+
+  50% {
+    transform: none;
+  }
+  
+  65% {
+    transform: scale3d(0.8, 0.8, 1);
+  }
+
+  75% {
+    transform: scale3d(0.5, 0.5, 1);
+  }
+
+  85% {
+    transform: scale3d(0.2, 0.2, 1);
+  }
+
+  100% {
+    transform: scale3d(0, 0, 1);
+  }
+}
+
+@keyframes fill {
+  0% {
+    box-shadow: none;
+  }
+
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #000000;
+  }
+}
+
+
+@keyframes delete-item-anim {
+  from {
+    transform: translate(0%);
+    display: block;
+  }
+  to {
+    transform: translate(100%);
+    display: none;
+  }
+}
+
+@keyframes add-item-anim {
+  from {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(0%);
+  }
+}
+
+@keyframes add-item-input-field-in {
+  from {
+    opacity: 0%;
+    /* width: 0%; */
+  }
+  to {
+    opacity: 100%;
+    /* width: 80%; */
+  }
+}
+
+
+@keyframes fade-out {
+  from {
+    opacity: 100%;
+    /* display: block; */
+  }
+  to {
+    opacity: 0%;
+    /* display: none; */
+  }
+}
+
+
+@media (max-width:865px) and (min-width:651px) {
+  .container {
+    position: relative;
+    right: 1rem;
+  }
+
+  .item-text {
+    width: 60%;
+  }
+
+  .edit-item {
+    width: 60% !important;
+  }
+}
+
+@media (max-width:650px) and (min-width:526px) {
+  .container {
+    position: relative;
+    left: 1rem;
+  }
+
+  .list-group {
+    position: relative;
+    left: 0.5rem;
+  }
+
+  .item-text {
+    width: 50%;
+  }
+
+  .edit-item {
+    width: 50% !important;
+  }
+}
+
+@media (max-width:525px) and (min-width:406px)  {
+  .container {
+    position: relative;
+    left: 1.5rem;
+  }
+
+  .list-group-item {
+    font-size: small;
+  }
+
+  .add-item-contianer {
+    position: relative;
+    right: 1rem;
+  }
+
+  .add-btn {
+    font-size: small !important;
+  }
+
+  .item-text {
+    font-size: small;
+  }
+  
+  .edit-delete-button {
+    font-size: small !important;
+  }
+
+  .item-text {
+    width: 40%;
+    font-size: small;
+  }
+
+  .edit-item {
+    font-size: small !important;
+    width: 40% !important;
+  }
+
+}
+
+@media (max-width:405px) {
+  .container {
+    position: relative;
+    left: 1rem;
+  }
+
+  .list-group-item {
+    font-size: smaller;
+  }
+
+  .add-item-contianer {
+    position: relative;
+    right: 1rem;
+  }
+
+  .add-btn {
+    font-size: small !important;
+  }
+
+  .item-text {
+    width: 35%;
+    font-size: smaller;
+  }
+
+  .checkmark {
+    width: 1.5rem;
+    height: 1.5rem;
+    right: -2rem;
+  }
+  
+  .edit-delete-button {
+    font-size: smaller !important;
+  }
+
+  .edit-item {
+    font-size: smaller !important;
+    width: 35% !important;
+  }
+
+}
+
+@media (max-width:347px) and (min-width:300px) {
+  .app-title {
+    font-size: 2.5rem;
+  }
+  
+  .edit-delete-button {
+    font-size: 0.5rem !important;
+  }
+
+  .item-text {
+    width: 30%;
+    font-size: x-small;
+  }
+
+  .edit-item {
+    font-size: x-small !important;
+    width: 30% !important;
+  }
+}
+
+@media (max-width:299px){
+  .app-title {
+    font-size: 2rem;
+  }
+  
+  .edit-delete-button {
+    font-size: 7px !important;
+  }
+
+  .item-text {
+    width: 20%;
+    font-size: xx-small;
+  }
+
+  .edit-item {
+    font-size: xx-small !important;
+    width: 20% !important;
+  }
+}
