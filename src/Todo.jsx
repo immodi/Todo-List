@@ -138,11 +138,4 @@ const initialTasks = [
   {id: 0, text: 'Visit Kafka Museum', done: true, animateAdd: false},
   {id: 1, text: 'Watch a puppet show', done: false, animateAdd: false},
   {id: 2, text: "Lennon Wall pic", done: true, animateAdd: false},
-  {id: 3, text: 'Visit Kafka Museum', done: true, animateAdd: false},
-  {id: 4, text: 'Watch a puppet show', done: false, animateAdd: false},
-  {id: 5, text: "Lennon Wall pic", done: true, animateAdd: false},
-  {id: 6, text: 'Visit Kafka Museum', done: true, animateAdd: false},
-  {id: 7, text: 'Watch a puppet show', done: false, animateAdd: false},
-  {id: 8, text: "Lennon Wall pic", done: true, animateAdd: false},
-  
 ];
