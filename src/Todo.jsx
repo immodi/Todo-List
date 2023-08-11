@@ -66,7 +66,7 @@ function ListItem({ item, list, setList, animateAdd }) {
       className="list-group-item"
       onAnimationEnd={deleteBool ? deleteItem : null}
       ref={itemTag}
-      style={animateAdd ? {animation: "add-item-anim 500ms 1 ease"} : {}}
+      style={animateAdd ? {animation: "add-item-anim 500ms 1 ease"} : deleteBool ? {transform: "translate(200%)"} : {}}
     >
       <input type="checkbox" style={{cursor: "pointer"}} id={item.id} checked={item.done} onChange={() => {
         setList(
