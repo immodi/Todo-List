@@ -47,7 +47,7 @@ function ListItem({ item, list, setList, animateAdd }) {
   const [defaultTextValue, setDefaultTextValue] = useState(item.text)
   const itemTag = useRef(0)
   const checkMark = useRef(0)
-
+  
   let checked = item.done
   let editedText = ""
 
@@ -63,7 +63,7 @@ function ListItem({ item, list, setList, animateAdd }) {
   return (
     <li
       key={item.id}
-      className="list-group-item"
+      className={checked ? "list-group-item list-group-item-done" : "list-group-item"}
       onAnimationEnd={deleteBool ? deleteItem : null}
       ref={itemTag}
       style={animateAdd ? {animation: "add-item-anim 500ms 1 ease"} : deleteBool ? {transform: "translate(200%)"} : {}}
@@ -85,9 +85,8 @@ function ListItem({ item, list, setList, animateAdd }) {
               (e) => { editedText = e.target.value }
             } />
           :
-          <span className="item-text" style={{display: "flex", flexDirection: "row", justifyContent: "start", alignItems: "center"}}>
-            {(item.text).length < 100 ? item.text : (item.text).slice(0, 20) + "..."}
-            {/* {item.text} */}
+          <span className={checked ? "item-text item-text-done" : "item-text"} style={{display: "flex", flexDirection: "row", justifyContent: "start", alignItems: "center"}}>
+            <span className={checked ? "strike" : ""}>{(item.text).length < 100 ? item.text : (item.text).slice(0, 20) + "..."}</span>
           </span>
       }
       <span className="update-buttons">
@@ -135,7 +134,7 @@ export default function Profile() {
 }
 
 const initialTasks = [
-  {id: 0, text: 'Visit Kafka Museum', done: true, animateAdd: false},
+  {id: 0, text: 'Visit Kafka Museum', done: false, animateAdd: false},
   {id: 1, text: 'Watch a puppet show', done: false, animateAdd: false},
-  {id: 2, text: "Lennon Wall pic", done: true, animateAdd: false},
+  {id: 2, text: "Lennon Wall pic", done: false, animateAdd: false},
 ];
